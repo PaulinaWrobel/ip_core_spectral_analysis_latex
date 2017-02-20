@@ -1,0 +1,147 @@
+\documentclass[a4paper,12pt,twoside,openright]{report}
+\usepackage[utf8x]{inputenc}
+\usepackage{ucs}
+\usepackage[T2A,T1]{fontenc}
+\usepackage[a4paper, top=3cm,bottom=3.5cm,left=3.5cm,right=2.5cm]{geometry}
+\usepackage[MeX]{polski}
+%\usepackage{titling}
+
+%\usepackage{mathptmx}
+
+\usepackage{etoolbox}
+%\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
+%\patchcmd{\tableofcontents}{\@starttoc{toc}}{\thispagestyle{fancy}\pagestyle{fancy}\@starttoc{toc}}{}{}
+%\patchcmd{\tableofcontents}{\pagestyle{plain}}{\pagestyle{fancy}}{}{}
+
+\usepackage{titlesec}
+\usepackage[nottoc]{tocbibind}
+
+\titleformat{\chapter}[display]
+{\bfseries\Huge}{\huge \chaptertitlename \ \thechapter}{10pt}{}
+
+\titlespacing*{\chapter}{0pt}{-\topskip}{30pt}[0pt]
+\titlespacing*{\tableofcontents}{0pt}{-\topskip}{30pt}[0pt]
+\usepackage{tocloft}
+\setlength{\cftbeforetoctitleskip}{-0.5\topskip}
+\setlength{\cftbeforeloftitleskip}{-0.5\topskip}
+%\setlength{\cftaftertoctitleskip}{-0.25\topskip}
+
+%\setlength{\textheight}{0.9\textheight}
+%\setlength{\footskip}{2\footskip}
+
+%\renewcommand{\baselinestretch}{1.5}
+
+
+%\usepackage{bold-extra}
+
+%\usepackage{amssymb}
+\usepackage{amsmath}
+%\usepackage{amsthm}
+%\usepackage{gensymb}
+%\makeatletter
+%\renewcommand*\env@matrix[1][*\c@MaxMatrixCols r]{
+%  \hskip -\arraycolsep
+%  \let\@ifnextchar\new@ifnextchar
+%  \array{#1}}
+%\makeatother
+
+\usepackage{leading}
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{lmtt}%lmtt,pcr
+
+\usepackage{tocloft}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows.meta,positioning,backgrounds,fit}
+\usepackage{pgfplots}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+%\usepackage{caption}
+\usepackage{subcaption}
+%\usepackage{adjustbox}
+\usepackage{listings}
+\renewcommand*{\lstlistlistingname}{Spis listingów}
+%\usepackage{dcolumn}
+%\newcolumntype{d}[1]{D{,}{,}{#1}}
+\usepackage{enumitem}
+%\usepackage{float}
+%\usepackage[font=small,skip=5pt]{caption}
+
+
+\usepackage{xcolor}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\usepackage{titling}
+\setlength{\headheight}{13.6pt}
+
+\author{Paulina Wr\'obel}
+\title{Koprocesor programowalny analizy harmonicznej dla d\l{}ugich ci\k{a}g\'ow pr\'obek}
+\date{2017}
+
+\makeatletter
+\let\mytitle\@title
+\makeatother
+
+\usepackage[pdftex,
+            pdfauthor={\theauthor},
+            pdftitle={\thetitle\ --- \theauthor},
+            pdfsubject={Praca dyplomowa},
+            pdfkeywords={DFT},
+            pdfproducer={Latex},
+            pdfcreator={pdflatex},
+            hidelinks]{hyperref}
+
+\fancyhf{}
+\fancyhead[RO]{\textit{\mytitle}}
+\fancyhead[LE]{\textit{\theauthor}}
+\fancyfoot[RO, LE]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\fancypagestyle{plain}{%
+\fancyhead[RO]{\textit{\mytitle}}
+\fancyhead[LE]{\textit{\theauthor}}
+\fancyfoot[RO, LE]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+}
+
+%\input{listing_style}
+\def\labelitemii{$\circ$}
+\def\labelitemiii{$\circ$}
+
+\usepackage{lipsum}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%\input{schemat_definicje}
+\pagestyle{fancy}
+\setlist[itemize]{noitemsep, topsep=0pt}
+\setlist[enumerate]{noitemsep, topsep=0pt}
+
+\input{tex/title_page}
+
+\clearpage{\pagestyle{empty}\cleardoublepage}
+\tableofcontents
+%\thispagestyle{fancy}
+
+\clearpage{\pagestyle{empty}\cleardoublepage}
+\listoffigures
+%\thispagestyle{fancy}
+%\lstlistoflistings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
+\chapter{Wstęp}
+\lipsum
+
+\clearpage{\pagestyle{empty}\cleardoublepage}
+\input{tex/bibliography}
+
+\end{document}
